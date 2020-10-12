@@ -72,4 +72,15 @@ public class Server {
 			e.printStackTrace();
 		}
 	}
+	public void sendMsg() {
+		try {
+			if (os != null) {
+				String message = JOptionPane.showInputDialog("What is your message?");
+				os.writeObject("message from server - " + message);
+				os.flush();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
